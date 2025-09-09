@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع أهلاوي الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="login-link">
+                        <a href="#" class="nav-link" data-page="login" style="color: white; text-decoration: none;">
+                            <i class="fas fa-user"></i> تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="#" class="nav-link" data-page="home" style="display: flex; align-items: center; text-decoration: none;">
+                        <div class="logo">
+                            <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                        </div>
+                        <h1 class="site-title">أهلاوي</h1>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">الرئيسية</a></li>
+                        <li><a href="#" class="nav-link" data-page="matches">موعد المباريات</a></li>
+                        <li><a href="#" class="nav-link" data-page="booking">المباريات المتاحة للحجز</a></li>
+                        <li><a href="#" class="nav-link" data-page="support">الدعم</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <div class="construction">
+        <i class="fas fa-tools"></i> الموقع تجريبي تحت الانشاء
+    </div>
+    
+    <section id="home" class="page active">
+        <div class="hero">
+            <h2>مرحباً بكم في موقع أهلاوي</h2>
+            <p>كل ما تحتاج معرفته عن نادي القرن في مكان واحد</p>
+            <a href="#" class="btn nav-link" data-page="matches">استعرض المباريات</a>
+        </div>
+    </section>
+    
+    <section id="matches" class="page">
+        <div class="container">
+            <h2>مواعيد المباريات القادمة</h2>
+            <div class="matches-container">
+                <div class="match-card">
+                    <h3>الأهلي × الزمالك</h3>
+                    <p>15 سبتمبر 2023 - 8:00 مساءً</p>
+                </div>
+                <div class="match-card">
+                    <h3>الأهلي × بيراميدز</h3>
+                    <p>22 سبتمبر 2023 - 7:00 مساءً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="booking" class="page">
+        <div class="container">
+            <h2>المباريات المتاحة للحجز</h2>
+            <div class="matches-container">
+                <div class="match-card">
+                    <h3>الأهلي × الزمالك</h3>
+                    <p>15 سبتمبر 2023</p>
+                    <a href="#" class="btn">احجز الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="support" class="page">
+        <div class="container">
+            <div class="support-container">
+                <h2>الدعم الفني</h2>
+                <form id="supportForm">
+                    <div class="form-group">
+                        <label for="supportMessage">رسالتك</label>
+                        <textarea id="supportMessage" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="login" class="page">
+        <div class="auth-container">
+            <h2>تسجيل الدخول</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">دخول</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" class="nav-link" data-page="register">إنشاء حساب جديد</a> |
+                <a href="#" class="nav-link" data-page="forgot-password">نسيت كلمة المرور؟</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="register" class="page">
+        <div class="auth-container">
+            <h2>إنشاء حساب</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">اسم المستخدم</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">البريد الإلكتروني</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">كلمة المرور</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <button type="submit" class="btn">تسجيل</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="forgot-password" class="page">
+        <div class="auth-container">
+            <h2>استعادة كلمة المرور</h2>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotEmail">البريد الإلكتروني</label>
+                    <input type="email" id="forgotEmail" required>
+                </div>
+                <button type="submit" class="btn">إرسال رابط الاستعادة</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                </div>
+                <p class="footer-text">نادي أهلاوي</p>
+                <p class="footer-text">© 2023 جميع الحقوق محفوظة</p>
+                <p class="footer-text">صمم بواسطة فريق أهلاوي للتطوير</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
