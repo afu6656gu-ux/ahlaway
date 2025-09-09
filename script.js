@@ -1,3 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("أهلاوي شغال!");
+document.addEventListener("DOMContentLoaded", () => {
+  alert("أهلاوي وبس ❤️🦅");
 });
