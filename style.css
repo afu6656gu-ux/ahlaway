@@ -1,94 +1,114 @@
+:root {
+    --main-red: #9b0000;
+    --dark-red: #7a0000;
+    --light-red: #cc0000;
+    --gold: #ffd700;
+    --dark-gray: #333333;
+    --light-gray: #f5f5f5;
+}
+
 body {
     margin: 0;
     font-family: 'Cairo', sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
 }
 
 header {
-    background: #d00;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 800;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0;
+    background: var(--main-red);
+    color: white;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul li a {
-    color: #fff;
+header .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-.hero {
-    background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Al_Ahly_SC_logo.png') no-repeat center center/150px;
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #fff;
-}
-
-.hero h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.hero button {
-    background: #d00;
-    color: #fff;
+.mobile-menu-btn {
+    display: none;
+    background: none;
     border: none;
-    padding: 12px 24px;
-    font-size: 16px;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-.news {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.news h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.news-item {
-    background: #fff;
+main {
     padding: 20px;
-    margin: 15px auto;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+input, textarea, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background: var(--main-red);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--dark-red);
 }
 
 footer {
-    background: #222;
-    color: #fff;
+    background: var(--dark-gray);
+    color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 15px;
+    margin-top: 20px;
 }
 
-footer .social a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 20px;
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: var(--main-red);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
 }
