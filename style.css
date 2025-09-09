@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #d00;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Al_Ahly_SC_logo.png') no-repeat center center/150px;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background: #d00;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.news {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.news h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.news-item {
+    background: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer .social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+}
