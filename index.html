@@ -1,78 +1,396 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>أهلاوي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع أهلاوي الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-    <h1>أهلاوي 🦅❤️</h1>
-    <div class="blink">الموقع تجريبي تحت الإنشاء</div>
-</header>
-
-<nav>
-    <a href="#" data-page="home">الرئيسية</a>
-    <a href="#" data-page="matches">موعد المباريات</a>
-    <a href="#" data-page="booking">المباريات المتاحة للحجز</a>
-    <a href="#" data-page="support">الدعم</a>
-</nav>
-
-<main>
-    <section id="home" class="content">
-        <h2 class="big">مرحبا بك في موقع أهلاوي</h2>
-        <p>تابع مواعيد المباريات واحجز تذكرتك بكل سهولة</p>
-    </section>
-
-    <section id="matches" class="content hidden">
-        <h2>موعد مباريات الأهلي القادمة</h2>
-
-        <article class="match-card">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/0/0a/Al_Ahly_SC_logo.png" class="match-logo" alt="شعار الأهلي"> الأهلي 
-            × 
-            <img src="https://upload.wikimedia.org/wikipedia/ar/2/20/Pharco_FC_logo.png" class="match-logo" alt="شعار فاركو"> فاركو  
-            <div class="meta">15 أغسطس 2025 - 9:00 مساء<br>استاد القاهرة الدولي</div>
-        </article>
-
-        <article class="match-card">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/0/0a/Al_Ahly_SC_logo.png" class="match-logo" alt="شعار الأهلي"> الأهلي 
-            × 
-            <img src="https://upload.wikimedia.org/wikipedia/ar/f/f9/Ghazl_El_Mahalla_SC_logo.png" class="match-logo" alt="شعار غزل المحلة"> غزل المحلة  
-            <div class="meta">25 أغسطس 2025 - 6:00 مساء<br>استاد غزل المحلة</div>
-        </article>
-
-        <article class="match-card">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/0/0a/Al_Ahly_SC_logo.png" class="match-logo" alt="شعار الأهلي"> الأهلي 
-            × 
-            <img src="https://upload.wikimedia.org/wikipedia/ar/0/0b/Pyramids_FC_logo.png" class="match-logo" alt="شعار بيراميدز"> بيراميدز  
-            <div class="meta">30 أغسطس 2025 - 9:00 مساء<br>استاد القاهرة الدولي</div>
-        </article>
-    </section>
-
-    <section id="booking" class="content hidden">
-        <h2>المباريات المتاحة للحجز</h2>
-        <article class="match-card">
-            <img src="https://upload.wikimedia.org/wikipedia/ar/0/0a/Al_Ahly_SC_logo.png" class="match-logo" alt="شعار الأهلي"> الأهلي 
-            × 
-            <img src="https://upload.wikimedia.org/wikipedia/ar/2/20/Pharco_FC_logo.png" class="match-logo" alt="شعار فاركو"> فاركو  
-            <div class="meta">15 أغسطس 2025 - 9:00 مساء<br>استاد القاهرة الدولي</div>
-            <a href="https://www.tazkarti.com/" target="_blank" class="btn">احجز الآن</a>
-        </article>
-    </section>
-
-    <section id="support" class="content hidden">
-        <h2>التواصل مع الدعم الفني</h2>
-        <div class="match-card">
-            تواصل على واتساب:
-            <div style="height:12px"></div>
-            <a href="https://wa.me/201000000000" target="_blank" class="btn">اضغط هنا</a>
+    <!-- الرأس -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="login-link">
+                        <a href="#" class="nav-link" data-page="login" style="color: white; text-decoration: none;">
+                            <i class="fas fa-user"></i> تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="#" class="nav-link" data-page="home" style="display: flex; align-items: center; text-decoration: none;">
+                        <div class="logo">
+                            <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                        </div>
+                        <h1 class="site-title">أهلاوي</h1>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">الرئيسية</a></li>
+                        <li><a href="#" class="nav-link" data-page="matches">موعد المباريات</a></li>
+                        <li><a href="#" class="nav-link" data-page="booking">المباريات المتاحة للحجز</a></li>
+                        <li><a href="#" class="nav-link" data-page="support">الدعم</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- قسم تحت الإنشاء -->
+    <div class="construction">
+        <i class="fas fa-tools"></i> الموقع تجريبي تحت الانشاء
+    </div>
+    
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>مرحبا بك في موقع <span>أهلاوي</span></h1>
+                <p>تابع مواعيد المباريات واحجز تذكرتك بكل سهولة من خلال منصتنا الموثوقة</p>
+                <a href="#" class="btn nav-link" data-page="matches">
+                    <i class="fas fa-futbol"></i> اكتشف المباريات
+                </a>
+            </div>
         </div>
     </section>
-</main>
-
-<script src="script.js"></script>
+    
+    <!-- صفحة مواعيد المباريات -->
+    <section id="matches" class="page">
+        <div class="container">
+            <h2 class="page-title">موعد مباريات الاهلي القادمة</h2>
+            <div class="matches-container">
+                <!-- مباراة الأهلي وإنبي - الجولة الخامسة -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الخامسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/Pfmvp1C3/Enppi.png" alt="شعار إنبي">
+                                </div>
+                                <div class="team-name">إنبي</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الأحد 14 سبتمبر</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد المقاولون العرب</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مباراة الأهلي وسيراميكا - الجولة السادسة -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة السادسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/yxBdXrDf/image.png" alt="شعار سيراميكا">
+                                </div>
+                                <div class="team-name">سيراميكا</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الخميس 19 سبتمبر</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد القاهرة الدولي</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مباراة الأهلي وحرس الحدود - الجولة السابعة -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة السابعة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/Gpym01Y7/image.jpg" alt="شعار حرس الحدود">
+                                </div>
+                                <div class="team-name">حرس الحدود</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الاثنين 23 سبتمبر</p>
+                            <p><i class="far fa-clock"></i> 5:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد الكلية الحربية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مباراة الأهلي والزمالك - الجولة الثامنة -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الثامنة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/RhVm0r6z/Zamalek-Logo-svg.png" alt="شعار الزمالك">
+                                </div>
+                                <div class="team-name">الزمالك</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الأحد 29 سبتمبر</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد القاهرة الدولي</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مباراة الأهلي وكهرباء الإسماعيلي - الجولة التاسعة -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة التاسعة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/cJRGM1fS/image.png" alt="شعار الإسماعيلي">
+                                </div>
+                                <div class="team-name">كهرباء الإسماعيلية</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الخميس 10 أكتوبر</p>
+                            <p><i class="far fa-clock"></i> 5:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد السويس الجديد</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة المباريات المتاحة للحجز -->
+    <section id="booking" class="page">
+        <div class="container">
+            <h2 class="page-title">المباريات المتاحة للحجز</h2>
+            <div class="matches-container">
+                <!-- مباراة الأهلي وإنبي فقط -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الخامسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي">
+                                </div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo">
+                                    <img src="https://i.postimg.cc/Pfmvp1C3/Enppi.png" alt="شعار إنبي">
+                                </div>
+                                <div class="team-name">إنبي</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الأحد 14 سبتمبر</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد المقاولون العرب</p>
+                        </div>
+                        <a href="https://www.tazkarti.com" class="btn">
+                            <i class="fas fa-ticket-alt"></i> احجز الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة الدعم -->
+    <section id="support" class="page">
+        <div class="container">
+            <h2 class="page-title">الدعم الفني</h2>
+            <div class="support-container">
+                <i class="fab fa-whatsapp" style="font-size: 54px; color: #25D366; margin-bottom: 15px;"></i>
+                <h3>التواصل مع الدعم الفني</h3>
+                <p>للتواصل مع خدمة العملاء والدعم الفني، يرجى الضغط على الزر أدناه للتواصل عبر واتساب</p>
+                <a href="https://wa.me/20123456789" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> تواصل على واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة تسجيل الدخول -->
+    <section id="login" class="page">
+        <div class="container">
+            <h2 class="page-title">تسجيل الدخول</h2>
+            <div class="login-container">
+                <h2>مرحباً بعودتك!</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+                    </div>
+                    
+                    <div class="login-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">تذكرني</label>
+                        </div>
+                        
+                        <a href="#" class="forgot-password nav-link" data-page="forgot-password">نسيت كلمة المرور؟</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">تسجيل الدخول</button>
+                    
+                    <div class="register-link">
+                        ليس لديك حساب؟ <a href="#" class="nav-link" data-page="register">سجل الآن</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة إنشاء حساب -->
+    <section id="register" class="page">
+        <div class="container">
+            <h2 class="page-title">إنشاء حساب جديد</h2>
+        <div class="register-container">
+                <h2>انضم إلى أسرة أهلاوي</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="reg-name">الاسم بالكامل</label>
+                        <input type="text" id="reg-name" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">البريد الإلكتروني</label>
+                        <input type="email" id="reg-email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-password">كلمة المرور</label>
+                        <input type="password" id="reg-password" placeholder="اختر كلمة مرور قوية" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-confirm-password">تأكيد كلمة المرور</label>
+                        <input type="password" id="reg-confirm-password" placeholder="أعد إدخال كلمة المرور" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-phone">رقم الهاتف</label>
+                        <input type="tel" id="reg-phone" placeholder="أدخل رقم هاتفك">
+                    </div>
+                    
+                    <button type="submit" class="login-btn">إنشاء الحساب</button>
+                    
+                    <div class="register-link">
+                        لديك حساب بالفعل؟ <a href="#" class="nav-link" data-page="login">تسجيل الدخول</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة استعادة كلمة المرور -->
+    <section id="forgot-password" class="page">
+        <div class="container">
+            <h2 class="page-title">استعادة كلمة المرور</h2>
+            <div class="forgot-password-container">
+                <h2>نسيت كلمة المرور؟</h2>
+                <p>أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="reset-email">البريد الإلكتروني</label>
+                        <input type="email" id="reset-email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">إرسال رابط الاستعادة</button>
+                    
+                    <div class="register-link">
+                        تذكرت كلمة المرور؟ <a href="#" class="nav-link" data-page="login">تسجيل الدخول</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                </div>
+                <p class="footer-text">نادي أهلاوي</p>
+                <p class="footer-text">© 2023 جميع الحقوق محفوظة</p>
+                <p class="footer-text">صمم بواسطة فريق أهلاوي للتطوير</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
