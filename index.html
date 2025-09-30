@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع أهلاوي الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --main-red: #9b0000;
+            --dark-red: #7a0000;
+            --light-red: #cc0000;
+            --gold: #ffd700;
+            --dark-gray: #333333;
+            --light-gray: #f5f5f5;
+            --success-green: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* شريط التنقل */
+        header {
+            background: linear-gradient(135deg, var(--main-red) 0%, var(--dark-red) 100%);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-top {
+            background-color: var(--dark-red);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 12px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+        }
+
+        .logo img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .site-title {
+            color: white;
+            font-size: 26px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 2px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 14px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+
+        /* قائمة الجوال */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1100;
+        }
+
+        /* قسم البناء */
+        .construction {
+            background-color: var(--gold);
+            padding: 10px 0;
+            text-align: center;
+            color: var(--dark-gray);
+            font-weight: 700;
+            animation: blink 1.5s infinite;
+            font-size: 16px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        /* المحتوى الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1596510913920-85d87a1800d2?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--main-red) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 0 auto 25px;
+            animation: fadeInUp 1s ease;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--main-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* عداد المباراة القادمة */
+        #countdown-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--gold);
+            backdrop-filter: blur(5px);
+        }
+        #countdown-container h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            direction: ltr;
+        }
+        .countdown-item {
+            text-align: center;
+        }
+        .countdown-item span {
+            display: block;
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .countdown-item p {
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        /* صفحات المحتوى */
+        .page {
+            display: none;
+            padding: 40px 15px;
+            animation: fadeIn 0.5s ease;
+            min-height: calc(100vh - 250px);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .page-title {
+            text-align: center;
+            color: var(--main-red);
+            margin-bottom: 40px;
+            font-size: 32px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--main-red) 0%, var(--gold) 100%);
+            border-radius: 2px;
+        }
+
+        /* صناديق المباريات */
+        .matches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .match-box {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border-top: 4px solid var(--main-red);
+        }
+
+        .match-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .match-header {
+            background: linear-gradient(135deg, var(--main-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .match-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--main-red);
+            rotate: 45deg;
+            z-index: 1;
+        }
+
+        .match-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team {
+            text-align: center;
+            flex: 1;
+        }
+
+        .team-logo {
+            width: 70px;
+            height: 70px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            border: 2px solid var(--main-red);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .team-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .vs {
+            font-weight: 800;
+            color: var(--main-red);
+            margin: 0 12px;
+            font-size: 18px;
+        }
+
+        .match-info {
+            margin: 15px 0;
+            color: #666;
+            background: var(--light-gray);
+            padding: 12px;
+            border-radius: 8px;
+            border-right: 3px solid var(--main-red);
+        }
+
+        .match-info p {
+            margin: 6px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .match-info i {
+            color: var(--main-red);
+            font-size: 14px;
+        }
+
+        /* صفحة الدعم */
+        .support-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+            border-top: 4px solid var(--main-red);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* صفحات تسجيل الدخول، إنشاء حساب، استعادة كلمة المرور */
+        .login-container, .register-container, .forgot-password-container {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+            border-top: 4px solid var(--main-red);
+        }
+        
+        .login-container h2, .register-container h2, .forgot-password-container h2 {
+            text-align: center;
+            color: var(--main-red);
+            margin-bottom: 25px;
+            font-weight: 800;
+            font-size: 24px;
+        }
+        
+        .forgot-password-container { text-align: center; }
+        
+        .forgot-password-container p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .form-group { margin-bottom: 15px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--main-red);
+            outline: none;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .forgot-password {
+            color: var(--main-red);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .forgot-password:hover { text-decoration: underline; }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--main-red) 0%, var(--dark-red) 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: var(--main-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover { text-decoration: underline; }
+
+
+        /* التذييل */
+        footer {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #000 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .footer-text {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        /* بطاقة الدوري المصري */
+        .league-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffcc00 100%);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
+        /* رسالة الإشعار */
+        #notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(150%);
+            background-color: var(--success-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            transition: transform 0.4s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        /* الرسوم المتحركة */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- تصميم متجاوب (Responsive) --- */
+        
+        /* شاشات التابلت */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .page-title { font-size: 28px; }
+            .matches-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        }
+
+        /* شاشات الموبايل الكبيرة والتابلت الصغيرة */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--dark-red);
+                width: 100%;
+                padding: 10px 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            
+            nav.active ul {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                padding: 15px;
+            }
+            nav ul li a:hover::after {
+                width: 50%;
+            }
+
+            .hero { padding: 80px 15px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+
+            .countdown-item span { font-size: 32px; }
+            .countdown-item p { font-size: 14px; }
+            
+            .teams {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .vs { margin: 10px 0; }
+        }
+        
+        /* شاشات الموبايل الصغيرة */
+        @media (max-width: 480px) {
+            .header-top { display: none; } /* إخفاء الشريط العلوي في الموبايل */
+            
+            .logo { width: 50px; height: 50px; }
+            .site-title { font-size: 22px; }
+            
+            .hero { padding: 60px 12px; }
+            .hero h1 { font-size: 28px; }
+            
+            .page-title { font-size: 24px; }
+            
+            .team-logo { width: 60px; height: 60px; }
+            
+            .login-container, .register-container, .support-container, .forgot-password-container { 
+                padding: 25px; 
+            }
+            
+            .btn { padding: 10px 20px; font-size: 14px; }
+
+            .countdown-item span { font-size: 28px; }
+            .countdown-item p { font-size: 12px; }
+            .countdown { gap: 10px; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- الرأس -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="login-link">
+                        <a href="#" class="nav-link" data-page="login" style="color: white; text-decoration: none;">
+                            <i class="fas fa-user"></i> تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="nav-link logo-container" data-page="home" style="text-decoration: none;">
+                    <div class="logo">
+                        <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                    </div>
+                    <h1 class="site-title">أهلاوي</h1>
+                </a>
+                
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">الرئيسية</a></li>
+                        <li><a href="#" class="nav-link" data-page="matches">مواعيد المباريات</a></li>
+                        <li><a href="#" class="nav-link" data-page="booking">حجز التذاكر</a></li>
+                        <li><a href="#" class="nav-link" data-page="support">الدعم</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- قسم تحت الإنشاء -->
+    <div class="construction">
+        <i class="fas fa-tools"></i> الموقع تجريبي تحت الانشاء
+    </div>
+    
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>مرحبا بك في موقع <span>أهلاوي</span></h1>
+                <p>تابع مواعيد المباريات واحجز تذكرتك بكل سهولة من خلال منصتنا الموثوقة</p>
+                <a href="#" class="btn nav-link" data-page="matches">
+                    <i class="fas fa-futbol"></i> اكتشف المباريات
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div id="countdown-container">
+                 <h3>المباراة القادمة: الأهلي ضد إنبي</h3>
+                 <div id="countdown">
+                     <div class="countdown-item">
+                         <span id="days">00</span>
+                         <p>أيام</p>
+                     </div>
+                     <div class="countdown-item">
+                         <span id="hours">00</span>
+                         <p>ساعات</p>
+                     </div>
+                     <div class="countdown-item">
+                         <span id="minutes">00</span>
+                         <p>دقائق</p>
+                     </div>
+                     <div class="countdown-item">
+                         <span id="seconds">00</span>
+                         <p>ثواني</p>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة مواعيد المباريات -->
+    <section id="matches" class="page">
+        <div class="container">
+            <h2 class="page-title">مواعيد مباريات الأهلي القادمة</h2>
+            <div class="matches-container">
+                <!-- مباراة الأهلي وإنبي -->
+                <div class="match-box" data-datetime="2025-10-10T20:00:00">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الخامسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي"></div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/Pfmvp1C3/Enppi.png" alt="شعار إنبي"></div>
+                                <div class="team-name">إنبي</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الجمعة 10 أكتوبر 2025</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد المقاولون العرب</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مباراة الأهلي وسيراميكا -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة السادسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                           <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي"></div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/yxBdXrDf/image.png" alt="شعار سيراميكا"></div>
+                                <div class="team-name">سيراميكا</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الأربعاء 15 أكتوبر 2025</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد القاهرة الدولي</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- مباراة الأهلي وحرس الحدود -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة السابعة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي"></div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/Gpym01Y7/image.jpg" alt="شعار حرس الحدود"></div>
+                                <div class="team-name">حرس الحدود</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الأحد 19 أكتوبر 2025</p>
+                            <p><i class="far fa-clock"></i> 5:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد الكلية الحربية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مباراة الأهلي والزمالك -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الثامنة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي"></div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/RhVm0r6z/Zamalek-Logo-svg.png" alt="شعار الزمالك"></div>
+                                <div class="team-name">الزمالك</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> السبت 25 أكتوبر 2025</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد القاهرة الدولي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة المباريات المتاحة للحجز -->
+    <section id="booking" class="page">
+        <div class="container">
+            <h2 class="page-title">المباريات المتاحة للحجز</h2>
+            <div class="matches-container">
+                <!-- مباراة الأهلي وإنبي فقط -->
+                <div class="match-box">
+                    <div class="league-badge">الدوري المصري</div>
+                    <div class="match-header">الجولة الخامسة</div>
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار الأهلي"></div>
+                                <div class="team-name">الأهلي</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo"><img src="https://i.postimg.cc/Pfmvp1C3/Enppi.png" alt="شعار إنبي"></div>
+                                <div class="team-name">إنبي</div>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> الجمعة 10 أكتوبر 2025</p>
+                            <p><i class="far fa-clock"></i> 8:00 مساءً</p>
+                            <p><i class="fas fa-map-marker-alt"></i> ستاد المقاولون العرب</p>
+                        </div>
+                        <a href="https://www.tazkarti.com" target="_blank" class="btn">
+                            <i class="fas fa-ticket-alt"></i> احجز الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحة الدعم -->
+    <section id="support" class="page">
+        <div class="container">
+            <h2 class="page-title">الدعم الفني</h2>
+            <div class="support-container">
+                <i class="fab fa-whatsapp" style="font-size: 54px; color: #25D366; margin-bottom: 15px;"></i>
+                <h3>التواصل مع الدعم الفني</h3>
+                <p>للتواصل مع خدمة العملاء والدعم الفني، يرجى الضغط على الزر أدناه للتواصل عبر واتساب</p>
+                <a href="https://wa.me/20123456789" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> تواصل على واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- صفحات تسجيل الدخول وإنشاء الحساب -->
+    <section id="login" class="page">
+        <div class="container">
+            <h2 class="page-title">تسجيل الدخول</h2>
+            <div class="login-container">
+                <h2>مرحباً بعودتك!</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+                    </div>
+                    <div class="login-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember"> <label for="remember">تذكرني</label>
+                        </div>
+                        <a href="#" class="forgot-password nav-link" data-page="forgot-password">نسيت كلمة المرور؟</a>
+                    </div>
+                    <button type="submit" class="login-btn">تسجيل الدخول</button>
+                    <div class="register-link">
+                        ليس لديك حساب؟ <a href="#" class="nav-link" data-page="register">سجل الآن</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="register" class="page">
+        <div class="container">
+            <h2 class="page-title">إنشاء حساب جديد</h2>
+            <div class="register-container">
+                <h2>انضم إلى أسرة أهلاوي</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="reg-name">الاسم بالكامل</label>
+                        <input type="text" id="reg-name" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">البريد الإلكتروني</label>
+                        <input type="email" id="reg-email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">كلمة المرور</label>
+                        <input type="password" id="reg-password" placeholder="اختر كلمة مرور قوية" required>
+                    </div>
+                    <button type="submit" class="login-btn">إنشاء الحساب</button>
+                    <div class="register-link">
+                        لديك حساب بالفعل؟ <a href="#" class="nav-link" data-page="login">تسجيل الدخول</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="forgot-password" class="page">
+        <div class="container">
+            <h2 class="page-title">استعادة كلمة المرور</h2>
+            <div class="forgot-password-container">
+                <h2>نسيت كلمة المرور؟</h2>
+                <p>أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="reset-email">البريد الإلكتروني</label>
+                        <input type="email" id="reset-email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    <button type="submit" class="login-btn">إرسال رابط الاستعادة</button>
+                    <div class="register-link">
+                        تذكرت كلمة المرور؟ <a href="#" class="nav-link" data-page="login">تسجيل الدخول</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.postimg.cc/DfcYTY9s/Al-Ahly-SC-logo-23-svg-1.png" alt="شعار أهلاوي">
+                </div>
+                <p class="footer-text">نادي أهلاوي</p>
+                <p class="footer-text">© 2025 جميع الحقوق محفوظة</p>
+                <p class="footer-text">صمم بواسطة فريق أهلاوي للتطوير</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- عنصر الإشعار -->
+    <div id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+
+            // --- التنقل بين الصفحات ---
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.getElementById(pageId);
+                if(targetPage) {
+                    targetPage.classList.add('active');
+                }
+                mainNav.classList.remove('active'); // إغلاق القائمة عند التنقل
+                window.scrollTo(0, 0);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    if (pageId) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // --- قائمة الجوال ---
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+
+            // --- نظام الإشعارات ---
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            function showNotification(message) {
+                notificationMessage.textContent = message;
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // --- معالجة النماذج ---
+            document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showNotification('تم تسجيل الدخول بنجاح!');
+                setTimeout(() => showPage('home'), 500);
+            });
+            
+            document.getElementById('registerForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showNotification('تم إنشاء الحساب بنجاح!');
+                setTimeout(() => showPage('home'), 500);
+            });
+
+            document.getElementById('forgotPasswordForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showNotification('تم إرسال رابط الاستعادة إلى بريدك الإلكتروني!');
+                setTimeout(() => showPage('login'), 500);
+            });
+            
+            // --- عداد المباراة القادمة ---
+            const countdownElement = document.getElementById('countdown');
+            const nextMatchElement = document.querySelector('.match-box[data-datetime]');
+
+            if (countdownElement && nextMatchElement) {
+                const countDownDate = new Date(nextMatchElement.getAttribute('data-datetime')).getTime();
+
+                const interval = setInterval(function() {
+                    const now = new Date().getTime();
+                    const distance = countDownDate - now;
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    if (document.getElementById('days')) {
+                        document.getElementById('days').innerText = String(days).padStart(2, '0');
+                        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                    }
+
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownElement.innerHTML = "<p style='font-size: 24px; color: white;'>المباراة بدأت!</p>";
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
+
